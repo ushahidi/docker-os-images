@@ -1,0 +1,9 @@
+dockerize-debian:
+  build:
+    image: ushahidi/debian:stretch-dockerize
+    dockerfile: debian.Dockerfile
+
+dockerize-alpine:
+  build:
+    image: ushahidi/alpine:3.6-dockerize
+    dockerfile: alpine.Dockerfile
