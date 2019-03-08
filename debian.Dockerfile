@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-ENV DOCKERIZE_VERSION=v0.6.0 \
+ENV DOCKERIZE_VERSION=v0.6.1 \
     DOCKERIZE_TEMPLATE_DIR=/tmpl
 
 RUN apt-get update && \

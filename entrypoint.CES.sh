@@ -33,6 +33,8 @@ manage() {
   case "$1" in
     add)
       # Appends entrypoint to the execution list
+      #   add <entrypoint> [args ...]
+      #
       # Check the entrypoint is readable and executable
       if [[ ! ( -r $2 ) || ! ( -x $2 ) ]]; then
         _fatal 2 "Entrypoint script $2 must be readable AND executable"
@@ -43,15 +45,27 @@ manage() {
       echo "${@:2}" >> $DOCKERCES_ENTRYPOINT_CHAIN
       _print_debug "Added ""${@:2}"" to execution chain"
       ;;
+
+    on-init)
+      # Adds a command to be run on container initialisation
+      #   on-init <cmd> [args ...]
+      #
+      _fatal 1 "Implementation is pending"
+      ;;
+
     endpoint)
       # Sets the endpoint of the chain. There can only be one endpoint and
       # it's always executed at the end of the chain. Thus, it doesn't need
       # to be chainable.
+      #
+      #   endpoint <endpoint> [args ...]
+      #   endpoint    # clears endpoint
+      #
       # An endpoint is optional, without an endpoint, the entrypoint chain
       # ends in the equivalent of `exec "$@"`
       _print_debug "Setting endpoint to '""${@:2}""'"
       # Check the endpoint is readable and executable
-      if [[ ! ( -r $2 ) || ! ( -x $2 ) ]]; then
+      if [[ -n "$2" && ( ! ( -r $2 ) || ! ( -x $2 ) ) ]]; then
         _fatal 2 "Endpoint $2 must be readable AND executable"
       fi
       echo "${@:2}" > $DOCKERCES_ENDPOINT_FILE

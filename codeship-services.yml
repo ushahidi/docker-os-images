@@ -5,5 +5,5 @@ dockerize-debian:
 
 dockerize-alpine:
   build:
-    image: ushahidi/alpine:3.6-dockerize
+    image: ushahidi/alpine:3.9-dockerize
     dockerfile: alpine.Dockerfile

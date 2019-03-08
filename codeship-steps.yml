@@ -21,10 +21,10 @@
       image_tag: stretch-dockerize
       registry: https://index.docker.io/v1/
       encrypted_dockercfg_path: dockercfg.encrypted
-    - name: "Push ushahidi/alpine:3.6-dockerize"
+    - name: "Push ushahidi/alpine:3.9-dockerize"
       service: dockerize-alpine
       type: push
       image_name: ushahidi/alpine
-      image_tag: 3.6-dockerize
+      image_tag: 3.9-dockerize
       registry: https://index.docker.io/v1/
       encrypted_dockercfg_path: dockercfg.encrypted

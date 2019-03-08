@@ -1,6 +1,6 @@
-FROM alpine:3.6
+FROM alpine:3.9
 
-ENV DOCKERIZE_VERSION=v0.6.0 \
+ENV DOCKERIZE_VERSION=v0.6.1 \
     DOCKERIZE_TEMPLATE_DIR=/tmpl
 
 RUN apk add --no-cache openssl curl findutils bash && \
