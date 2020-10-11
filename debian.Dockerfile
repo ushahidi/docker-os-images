@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:buster
 
 ENV DOCKERIZE_VERSION=v0.6.1 \
     DOCKERIZE_TEMPLATE_DIR=/tmpl

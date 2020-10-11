@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.12
 
 ENV DOCKERIZE_VERSION=v0.6.1 \
     DOCKERIZE_TEMPLATE_DIR=/tmpl
